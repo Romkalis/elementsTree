@@ -5,6 +5,7 @@ interface ParentProps {
   data: Tree;
 }
 
+
 export function Parent({ data }: ParentProps) {
   console.log(Object.keys(data).map((key) => console.log(data[key])));
 
