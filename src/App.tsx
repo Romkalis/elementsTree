@@ -1,12 +1,10 @@
 import './App.css'
 import { Tree } from './interfaces';
-// import {Parent} from './ParentComponent.tsx';
 import { ItemsTree } from './ItemsTree';
 
 interface AppProps {
   data: Tree;
 }
-
 // const checkChild = (object: any): boolean => {
 //   for (const key in object) {
 
