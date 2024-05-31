@@ -21,7 +21,6 @@ export const ItemsTree: FC<{ data: Tree }> = ({ data }) => {
       return (
         <div
           className="parent"
-          style={{ marginLeft: "20px", cursor: "pointer" }}
           key={object.id}
           onClick={(evt) => toggleChildHandler(evt, object.id)}
         >
