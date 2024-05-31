@@ -1,11 +1,10 @@
-import { useState, FC } from "react";
+import { useState, FC, MouseEvent } from "react";
 import { Tree } from "./interfaces";
 
 export const ItemsTree: FC<{ data: Tree }> = ({ data }) => {
-
   const [isClosed, setIsClosed] = useState({});
 
-  const toggleChildHandler = (evt, id) => {
+  const toggleChildHandler = (evt: MouseEvent, id: string) => {
 
     setIsClosed((prevState) => {
       if (!prevState[id]) {
@@ -17,7 +16,7 @@ export const ItemsTree: FC<{ data: Tree }> = ({ data }) => {
     evt.stopPropagation();
   };
 
-  const renderTree = (object) => {
+  const renderTree = (object: Tree) => {
 
       return (
         <div
@@ -34,7 +33,7 @@ export const ItemsTree: FC<{ data: Tree }> = ({ data }) => {
           </p>
           <div className="children" style={isClosed[object.id] ? {display: "block"} : {display: "none"}}>
           { 
-            object.children?.length !== 0 
+            object.children && object.children?.length !== 0 
               ? object.children.map((child) => renderTree(child)) 
               : null
           }
