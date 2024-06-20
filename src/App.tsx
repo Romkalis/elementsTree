@@ -1,25 +1,12 @@
 import './App.css'
 import { Tree } from './interfaces';
-import { ItemsTree } from './ItemsTree';
+import { ItemsTree } from './components/ItemsTree';
 
-interface AppProps {
-  data: Tree;
-}
-// const checkChild = (object: any): boolean => {
-//   for (const key in object) {
-
-//     if (Array.isArray(object[key]) && object[key].legth !== 0) {
-//       return true;
-//     }
-
-//     if (typeof object[key] === 'object' && object[key] !== null) {
-//       return true;
-//     }
-//   }
-//   return false
+// interface AppProps {
+//   data: Tree;
 // }
 
-export const App: React.FC<AppProps> = ({ data }) => {
+export const App = ({ data }) => {
   return (
     <>
       <ItemsTree data={data}></ItemsTree>
